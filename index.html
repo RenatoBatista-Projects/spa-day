@@ -9,7 +9,12 @@
   <style>
     :root { --bg:#faf7fb; --card:#ffffff; --txt:#2c2c2c; --acc:#b74aa0; }
     * { box-sizing: border-box; }
-    body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif; background: var(--bg); color: var(--txt);}
+    body { 
+      margin:0; 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif; 
+      background: var(--bg); 
+      color: var(--txt);
+    }
     .wrap { max-width: 960px; margin: 0 auto; padding: 24px; }
     .card { background: var(--card); border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,.08); overflow: hidden; }
     header { padding: 24px; text-align:center; }
@@ -25,16 +30,18 @@
     @media (min-width: 800px) {
       .grid { grid-template-columns: 2fr 1fr; align-items:start; }
     }
+
+    /* PATCH contra modo escuro forçado */
     html, body {
-    background: #faf7fb !important;   /* sua cor de fundo */
-    color-scheme: light;               /* evita que o navegador “escureça” */
-  }
-  /* Se o navegador insistir em modo escuro, ainda assim mantenha claro */
-  @media (prefers-color-scheme: dark) {
-    html, body { background: #faf7fb !important; }
-  }  
+      background: #faf7fb !important;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      html, body { background: #faf7fb !important; }
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="card">
