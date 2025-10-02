@@ -2,9 +2,14 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#faf7fb">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- força tema claro -->
+  <meta name="color-scheme" content="light">
+  <!-- cor da barra do navegador no Android (claro e escuro) -->
+  <meta name="theme-color" content="#faf7fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#faf7fb" media="(prefers-color-scheme: dark)">
+
   <title>Presente: Day Spa Premium</title>
   <style>
     :root { --bg:#faf7fb; --card:#ffffff; --txt:#2c2c2c; --acc:#b74aa0; }
@@ -34,10 +39,20 @@
     /* PATCH contra modo escuro forçado */
     html, body {
       background: #faf7fb !important;
+      color: #2c2c2c !important;
       color-scheme: light;
+      background-image: linear-gradient(#faf7fb, #faf7fb) !important; /* truque anti-dark */
+      background-attachment: fixed !important;
     }
     @media (prefers-color-scheme: dark) {
-      html, body { background: #faf7fb !important; }
+      html, body {
+        background: #faf7fb !important;
+        color: #2c2c2c !important;
+      }
+      .card, .qrbox {
+        background: #ffffff !important;
+        color: #2c2c2c !important;
+      }
     }
   </style>
 </head>
