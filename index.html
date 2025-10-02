@@ -2,6 +2,8 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#faf7fb">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Presente: Day Spa Premium</title>
   <style>
@@ -22,6 +24,14 @@
     footer { text-align:center; padding: 16px 24px 24px; opacity:.7; font-size: 14px; }
     @media (min-width: 800px) {
       .grid { grid-template-columns: 2fr 1fr; align-items:start; }
+    html, body {
+    background: #faf7fb !important;   /* sua cor de fundo */
+    color-scheme: light;               /* evita que o navegador “escureça” */
+  }
+  /* Se o navegador insistir em modo escuro, ainda assim mantenha claro */
+  @media (prefers-color-scheme: dark) {
+    html, body { background: #faf7fb !important; }
+  }  
     }
   </style>
 </head>
